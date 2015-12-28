@@ -157,6 +157,7 @@ public class SampleUserDetails extends org.springframework.security.core.userdet
 
 最後にアプリケーション独自の永続化の仕組み（RDBMSやKVS、パスワードファイル等）とSpring Securityの認証メカニズムを橋渡しするため、`UserDetailsService`インターフェースを実装します。このオブジェクトは`WebSecurityConfigurerAdapter`のサンプルコードですでに登場しています：
 
+```java:
 /**
  * Spring Securityの認証メカニズムとアプリケーションのDBに格納された
  * ユーザのリレーションを橋渡しするためのサービス.
@@ -195,10 +196,12 @@ public class SampleUserDetailsService implements UserDetailsService {
         return SampleUserDetails.of(user);
     }
 }
-その他のオブジェクト
+```
 
-サンプル・アプリケーションでは、上記のほかUserオブジェクトやSampleUserMapper、SampleControllerなど種々のコンポーネントが利用されていますが、それらはSpring Securityとはあまり関係がないのでここではとくに触れません。
+## その他のオブジェクト
 
-反対に、これまでに個別に見てきたオブジェクトについてはいずれが欠けてもだめ（なはず）です。なかでもWebSecurityConfigurerAdapterはURLと認証・権限の制御を司るため重要性が高いオブジェクトです。
+サンプル・アプリケーションでは、上記のほか`User`オブジェクトや`SampleUserMapper`、`SampleController`など種々のコンポーネントが利用されていますが、それらはSpring Securityとはあまり関係がないのでここではとくに触れません。
 
-この記事にあえて載せてはいないコードも含めたアプリケーション全体の構成についてはGithubリポジトリを参照してください。
+反対に、これまでに個別に見てきたオブジェクトについてはいずれが欠けてもだめ（なはず）です。なかでも`WebSecurityConfigurerAdapter`はURLと認証・権限の制御を司るため重要性が高いオブジェクトです。
+
+この記事にあえて載せてはいないコードも含めたアプリケーション全体の構成についてはリポジトリにコミットされた個々のリソースを参照してください。
