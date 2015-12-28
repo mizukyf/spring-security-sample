@@ -128,7 +128,7 @@ public class SampleGrantedAuthority implements GrantedAuthority {
 }
 ```
 
-## `org.springframework.security.core.userdetails.User`を拡張する
+## `o.s.s.core.userdetails.User`を拡張する
 
 `org.springframework.security.core.userdetails.User`を拡張したクラスを用意します。パッケージ名付きの長ったらしい記載になりましたが、「User」ではアプリケーションの中の別のクラスと名前が衝突してしまうため、仕方なくこうしています。
 
